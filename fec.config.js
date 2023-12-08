@@ -15,6 +15,8 @@ const stats = {
   modules: false,
 };
 
+// process.env.LOCAL_API_PORT = 8000;
+
 // Show what files changed since last compilation
 class WatchRunPlugin {
   apply(compiler) {
@@ -104,7 +106,7 @@ module.exports = {
      */
     ...(process.env.LOCAL_API_PORT && {
       '/api/cost-management/v1/': {
-        host: `http://${process.env.LOCAL_API_HOST || 'localhost'}:${process.env.LOCAL_API_PORT}`,
+        host: `http://${process.env.LOCAL_API_HOST || 'localhost/'}:${process.env.LOCAL_API_PORT}/`,
       },
     }),
     /**
